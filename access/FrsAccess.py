@@ -63,7 +63,7 @@ class FrsAccess() :
         if "?" in uri:
             r.uri, query_tmp = uri.split("?")
             for kv in query_tmp.split("&"):
-                k, v = kv.Split("=")
+                k, v = kv.split("=")
                 r.query[k] = v
         else:
             r.uri = uri

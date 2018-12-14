@@ -1,12 +1,12 @@
 # _*_ coding: utf-8 _*_
 
-from param import AuthInfo
-from service import CompareService
-from service import DetectService
-from service import FaceService
-from service import FaceSetService
-from service import LiveDetectService
-from service import SearchService
+from .param import AuthInfo
+from .service import CompareService
+from .service import DetectService
+from .service import FaceService
+from .service import FaceSetService
+from .service import LiveDetectService
+from .service import SearchService
 from access import FrsAccess
 from common import FrsConstant
 
