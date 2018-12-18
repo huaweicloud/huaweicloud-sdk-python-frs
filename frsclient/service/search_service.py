@@ -41,7 +41,7 @@ class SearchService(object):
         if filter:
             request_body["filter"] = filter
         http_response = self.service.post(uri, request_body, image_type == ImageType.FILE)
-        return http_utils.HttpResponseUtils.httpResponse2Result(SearchFaceResult, http_response)
+        return http_utils.HttpResponseUtils.http_response2_result(SearchFaceResult, http_response)
         
     def search_face_by_base64(self, face_set_name, image, top_n=None, threshold=None,
                               search_sort=None, search_return_fields=None, filter=None):

@@ -34,7 +34,7 @@ class DetectService(object):
         elif image_type == ImageType.FILE:
             request_body['image_file'] = http_utils.HttpRequestUtils.load_file_as_multi_part(image)
         http_response = self.service.post(uri, request_body, image_type == ImageType.FILE)
-        return http_utils.HttpResponseUtils.httpResponse2Result(DetectFaceResult, http_response)
+        return http_utils.HttpResponseUtils.http_response2_result(DetectFaceResult, http_response)
 
     def detect_face_by_base64(self, image_base64, attributes=None):
         """

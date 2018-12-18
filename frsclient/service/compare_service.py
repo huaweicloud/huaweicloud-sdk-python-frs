@@ -36,7 +36,7 @@ class CompareService(object):
             request_body['image1_file'] = http_utils.HttpRequestUtils.load_file_as_multi_part(image1)
             request_body['image2_file'] = http_utils.HttpRequestUtils.load_file_as_multi_part(image2)
         http_response = self.service.post(uri, request_body, image_type == ImageType.FILE)
-        compare_face_result = http_utils.HttpResponseUtils.httpResponse2Result(CompareFaceResult, http_response)
+        compare_face_result = http_utils.HttpResponseUtils.http_response2_result(CompareFaceResult, http_response)
         return compare_face_result
 
     def compare_face_by_base64(self, image1_base64, image2_base64):

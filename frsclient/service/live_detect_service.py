@@ -35,7 +35,7 @@ class LiveDetectService(object):
         elif video_type == VideoType.FILE:
             request_body['video_file'] = http_utils.HttpRequestUtils.load_file_as_multi_part(video)
         http_response = self.service.post(uri, request_body, video_type == VideoType.FILE)
-        return http_utils.HttpResponseUtils.httpResponse2Result(LiveDetectResult, http_response)
+        return http_utils.HttpResponseUtils.http_response2_result(LiveDetectResult, http_response)
 
     def live_detect_by_base64(self, video_base64, actions=None, action_time=None):
         """

@@ -6,7 +6,7 @@ from frscommon.frs_exception import FrsException
 class HttpResponseUtils(object):
 
     @staticmethod
-    def httpResponse2Result(resultClass, httpResponse):
+    def http_response2_result(resultClass, httpResponse):
         """Convert response to ordered result class"""
         if httpResponse is None:
             return None

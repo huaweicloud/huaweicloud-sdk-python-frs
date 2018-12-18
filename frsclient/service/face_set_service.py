@@ -29,7 +29,7 @@ class FaceSetService(object):
         if external_fields:
             request_body['external_fields'] = external_fields
         httpResponse = self.service.post(uri, request_body)
-        return http_utils.HttpResponseUtils.httpResponse2Result(CreateFaceSetResult, httpResponse)
+        return http_utils.HttpResponseUtils.http_response2_result(CreateFaceSetResult, httpResponse)
 
     def get_all_face_sets(self):
         """
@@ -37,7 +37,7 @@ class FaceSetService(object):
         """
         uri = FrsConstant.FACE_SET_GET_ALL_URI % self.project_id
         http_response = self.service.get(uri)
-        return http_utils.HttpResponseUtils.httpResponse2Result(GetAllFaceSetsResult, http_response)
+        return http_utils.HttpResponseUtils.http_response2_result(GetAllFaceSetsResult, http_response)
 
     def get_face_set(self, face_set_name):
         """
@@ -45,7 +45,7 @@ class FaceSetService(object):
         """
         uri = FrsConstant.FACE_SET_GET_ONE_URI % (self.project_id, face_set_name)
         http_response = self.service.get(uri)
-        return http_utils.HttpResponseUtils.httpResponse2Result(GetFaceSetResult, http_response)
+        return http_utils.HttpResponseUtils.http_response2_result(GetFaceSetResult, http_response)
 
     def delete_face_set(self, face_set_name):
         """
@@ -53,5 +53,5 @@ class FaceSetService(object):
         """
         uri = FrsConstant.FACE_SET_DELETE_URI % (self.project_id, face_set_name)
         http_response = self.service.delete(uri)
-        return http_utils.HttpResponseUtils.httpResponse2Result(DeleteFaceSetResult, http_response)
+        return http_utils.HttpResponseUtils.http_response2_result(DeleteFaceSetResult, http_response)
         

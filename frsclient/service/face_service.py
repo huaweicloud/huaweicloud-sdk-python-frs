@@ -38,7 +38,7 @@ class FaceService(object):
         if external_fields:
             request_body['external_fields'] = external_fields
         http_response = self.service.post(uri, request_body, image_type == ImageType.FILE)
-        return http_utils.HttpResponseUtils.httpResponse2Result(AddFaceResult, http_response)
+        return http_utils.HttpResponseUtils.http_response2_result(AddFaceResult, http_response)
 
     def add_face_by_base64(self, face_set_name, image, external_image_id=None, external_fields=None):
         """
@@ -72,7 +72,7 @@ class FaceService(object):
         else:
             uri = FrsConstant.FACE_GET_BASE_URI % (self.project_id, face_set_name)
         http_response = self.service.get(uri)
-        return http_utils.HttpResponseUtils.httpResponse2Result(GetFaceResult, http_response)
+        return http_utils.HttpResponseUtils.http_response2_result(GetFaceResult, http_response)
 
     def get_face(self, face_set_name, face_id):
         """
@@ -99,7 +99,7 @@ class FaceService(object):
         else:
             uri = FrsConstant.FACE_DELETE_BY_FIELD_ID_URI % (self.project_id, face_set_name, field_id, field_value)
         http_response = self.service.delete(uri)
-        return http_utils.HttpResponseUtils.httpResponse2Result(DeleteFaceResult, http_response)
+        return http_utils.HttpResponseUtils.http_response2_result(DeleteFaceResult, http_response)
 
     def delete_face_by_external_image_id(self, face_set_name, external_image_id):
         """
