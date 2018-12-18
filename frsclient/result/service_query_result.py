@@ -1,7 +1,7 @@
-# -*- coding: utf-8 -*-detect service
+# -*- coding: utf-8 -*-
 
 class ServiceQueryResult(object):
-    """Result of Service Query."""
+    """Result of service query."""
 
     def __init__(self, content):
         self.content_origin = content

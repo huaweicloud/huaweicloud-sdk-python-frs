@@ -4,7 +4,7 @@ import requests
 import json
 import urllib3
 from urllib3 import encode_multipart_formdata
-from access.apig_sdk import signer
+from frsaccess.apig_sdk import signer
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 

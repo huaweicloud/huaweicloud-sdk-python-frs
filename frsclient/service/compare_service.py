@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from access import FrsAccess
-from common import FrsConstant
-from common import ImageType
-from utils import http_utils
+from frsaccess import FrsAccess
+from frscommon import FrsConstant
+from frscommon import ImageType
+from frsutils import http_utils
 from frsclient.result import CompareFaceResult
 
 
@@ -14,13 +14,13 @@ class CompareService(object):
         :type service: FrsAccess
         """
         self.service = service
-        self.projectId = project_id
+        self.project_id = project_id
 
     def _compare_face(self, image1, image2, image_type):
         """
         :rtype: CompareFaceResult
         """
-        uri = FrsConstant.FACE_COMPARE_URI % self.projectId
+        uri = FrsConstant.FACE_COMPARE_URI % self.project_id
         request_body = {}
         if image_type == ImageType.BASE64:
             if type(image1) is bytes:

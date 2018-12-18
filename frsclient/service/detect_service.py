@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from access import FrsAccess
-from common import FrsConstant
-from common import ImageType
-from utils import http_utils
+from frsaccess import FrsAccess
+from frscommon import FrsConstant
+from frscommon import ImageType
+from frsutils import http_utils
 from frsclient.result import DetectFaceResult
 
 

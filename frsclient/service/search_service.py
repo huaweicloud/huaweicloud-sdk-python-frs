@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from access import FrsAccess
-from common import FrsConstant
-from common import ImageType
-from utils import http_utils
+from frsaccess import FrsAccess
+from frscommon import FrsConstant
+from frscommon import ImageType
+from frsutils import http_utils
 from frsclient.result import SearchFaceResult
 
 class SearchService(object):
@@ -13,13 +13,13 @@ class SearchService(object):
         :type service: FrsAccess
         """
         self.service = service
-        self.projectId = project_id
+        self.project_id = project_id
 
     def _search_face(self, face_set_name, image, image_type, top_n, threshold, search_sort, search_return_fields, filter):
         """
         :rtype: SearchFaceResult
         """
-        uri = FrsConstant.FACE_SEARCH_URI % (self.projectId, face_set_name)
+        uri = FrsConstant.FACE_SEARCH_URI % (self.project_id, face_set_name)
         request_body = {}
         if image_type == ImageType.BASE64:
             if type(image) is bytes:

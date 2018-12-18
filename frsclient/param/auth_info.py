@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from common import FrsConstant
+from frscommon import FrsConstant
 
 class AuthInfo(object):
     """AuthInfo is the class with contains the account information.

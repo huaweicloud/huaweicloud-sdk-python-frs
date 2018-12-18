@@ -37,7 +37,7 @@ print(result_service_query.get_max_face_set_number())
 result_detect = frs_client.get_detect_service().detect_face_by_file(picture1_file)
 print(result_detect.get_eval_result())
 print(result_detect.get_faces())
-print(result_detect.get_bounding_box())
+print(result_detect.get_bounding_box(0))
 
 # def face_compare_example(frs_client):
 result_compare = frs_client.get_compare_service().compare_face_by_file(picture1_file, picture2_file)

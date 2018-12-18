@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from access import FrsAccess
-from common import FrsConstant
-from common import ImageType
-from utils import http_utils
+from frsaccess import FrsAccess
+from frscommon import FrsConstant
+from frscommon import ImageType
+from frsutils import http_utils
 from frsclient.result import AddFaceResult
 from frsclient.result import GetFaceResult
 from frsclient.result import DeleteFaceResult
@@ -16,13 +16,13 @@ class FaceService(object):
         :type service: FrsAccess
         """
         self.service = service
-        self.projectId = project_id
+        self.project_id = project_id
 
     def _add_face(self, face_set_name, image, image_type, external_image_id, external_fields):
         """
         :rtype: AddFaceResult
         """
-        uri = FrsConstant.FACE_ADD_URI % (self.projectId, face_set_name)
+        uri = FrsConstant.FACE_ADD_URI % (self.project_id, face_set_name)
         request_body = {}
         if image_type == ImageType.BASE64:
             if type(image) is bytes:
@@ -66,11 +66,11 @@ class FaceService(object):
         :rtype: GetFaceResult
         """
         if face_id:
-            uri = FrsConstant.FACE_GET_ONE_URI % (self.projectId, face_set_name, face_id)
+            uri = FrsConstant.FACE_GET_ONE_URI % (self.project_id, face_set_name, face_id)
         elif offset or limit:
-            uri = FrsConstant.FACE_GET_RANGE_URI % (self.projectId, face_set_name, offset, limit)
+            uri = FrsConstant.FACE_GET_RANGE_URI % (self.project_id, face_set_name, offset, limit)
         else:
-            uri = FrsConstant.FACE_GET_BASE_URI % (self.projectId, face_set_name)
+            uri = FrsConstant.FACE_GET_BASE_URI % (self.project_id, face_set_name)
         http_response = self.service.get(uri)
         return http_utils.HttpResponseUtils.httpResponse2Result(GetFaceResult, http_response)
 
@@ -93,11 +93,11 @@ class FaceService(object):
         :rtype: DeleteFaceResult
         """
         if external_image_id:
-            uri = FrsConstant.FACE_DELETE_BY_EXTERNAL_IMAGE_ID_URI % (self.projectId, face_set_name, external_image_id)
+            uri = FrsConstant.FACE_DELETE_BY_EXTERNAL_IMAGE_ID_URI % (self.project_id, face_set_name, external_image_id)
         elif face_id:
-            uri = FrsConstant.FACE_DELETE_BY_FACE_ID_URI % (self.projectId, face_set_name, face_id)
+            uri = FrsConstant.FACE_DELETE_BY_FACE_ID_URI % (self.project_id, face_set_name, face_id)
         else:
-            uri = FrsConstant.FACE_DELETE_BY_FIELD_ID_URI % (self.projectId, face_set_name, field_id, field_value)
+            uri = FrsConstant.FACE_DELETE_BY_FIELD_ID_URI % (self.project_id, face_set_name, field_id, field_value)
         http_response = self.service.delete(uri)
         return http_utils.HttpResponseUtils.httpResponse2Result(DeleteFaceResult, http_response)
 

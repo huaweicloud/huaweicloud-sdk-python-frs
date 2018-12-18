@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from access import *
-from common import *
+from frsaccess import *
+from frscommon import *
 from frsclient.param import *
 from frsclient.result import *
 from frsclient.service import *
@@ -29,7 +29,7 @@ class FrsClient(object):
         Initial account information
 
         :param project_id:  Project ID
-        :param auth_info:   Contains AK, SK, Endpoint, Region. (Choose one between auth_info and (ak, sk))
+        :param auth_info:   Contains AK, SK, end_point, Region. (Choose one between auth_info and (ak, sk))
         :param ak:  Access Key ID.
         :param sk:  Secret Access Key.
         :param proxies: [Optional] Proxy info.

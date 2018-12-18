@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from common.frs_exception import FrsException
+from frscommon.frs_exception import FrsException
 
 
 class HttpResponseUtils(object):
