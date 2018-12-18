@@ -35,7 +35,7 @@ class FrsAccess() :
         self.sig.AppKey = self.auth_info.ak
         self.sig.AppSecret = self.auth_info.sk
         r = signer.HttpRequest()
-        r.scheme, r.host = self.auth_info.endPoint.split("://")
+        r.scheme, r.host = self.auth_info.end_point.split("://")
         r.method = "POST"
         r.uri = uri
         if is_file:
@@ -60,7 +60,7 @@ class FrsAccess() :
         self.sig.AppKey = self.auth_info.ak
         self.sig.AppSecret = self.auth_info.sk
         r = signer.HttpRequest()
-        r.scheme, r.host = self.auth_info.endPoint.split("://")
+        r.scheme, r.host = self.auth_info.end_point.split("://")
         r.method = "GET"
         if "?" in uri:
             r.uri, query_tmp = uri.split("?")
@@ -80,7 +80,7 @@ class FrsAccess() :
         self.sig.AppKey = self.auth_info.ak
         self.sig.AppSecret = self.auth_info.sk
         r = signer.HttpRequest()
-        r.scheme, r.host = self.auth_info.endPoint.split("://")
+        r.scheme, r.host = self.auth_info.end_point.split("://")
         r.method = "DELETE"
         if "?" in uri:
             r.uri, query_tmp = uri.split("?")
