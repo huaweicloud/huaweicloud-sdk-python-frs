@@ -2,11 +2,10 @@
 
 import requests
 import json
-import urllib3
-from urllib3 import encode_multipart_formdata
+from requests.packages.urllib3 import encode_multipart_formdata
 from frsaccess.apig_sdk import signer
 
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning)
 
 
 class FrsAccess() :
