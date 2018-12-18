@@ -1,1 +1,1 @@
-from .HttpUtils import *
+from utils.http_utils import *

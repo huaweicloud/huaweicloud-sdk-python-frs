@@ -1,4 +1,4 @@
 access
 common
-frsClient
+frsclient
 utils

@@ -71,7 +71,7 @@ HeaderContentSha256 = "x-sdk-content-sha256"
 
 # Build a CanonicalRequest from a regular request string
 #
-# CanonicalRequest =
+#  CanonicalRequest =
 #  HTTPRequestMethod + '\n' +
 #  CanonicalURI + '\n' +
 #  CanonicalQueryString + '\n' +

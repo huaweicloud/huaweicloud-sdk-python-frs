@@ -1,0 +1,1 @@
+from frsclient.param.auth_info import AuthInfo
