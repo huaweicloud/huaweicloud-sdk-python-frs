@@ -39,7 +39,7 @@ class FrsClient(object):
         :param connection_request_timeout: [Optional] Requests read timeout(unit:s).
         :param socket_time_out:     [Optional] Scoket timeout(unit:s).
         """
-        _auth_info = auth_info or AuthInfo
+        _auth_info = auth_info or AuthInfo(ak, sk, end_point, region)
         self.service = FrsAccess(_auth_info, connection_timeout, connection_request_timeout, socket_time_out, proxies)
         self.project_id = project_id
 
