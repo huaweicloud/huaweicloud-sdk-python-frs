@@ -6,12 +6,12 @@ from frscommon.frs_exception import FrsException
 class HttpResponseUtils(object):
 
     @staticmethod
-    def http_response2_result(resultClass, httpResponse):
+    def http_response2_result(resultClass, http_response):
         """Convert response to ordered result class"""
-        if httpResponse is None:
+        if http_response is None:
             return None
-        statusCode = httpResponse.status_code
-        content = httpResponse.content
+        statusCode = http_response.status_code
+        content = http_response.content
         if statusCode != 200:
             raise FrsException(statusCode, content)
         else:
