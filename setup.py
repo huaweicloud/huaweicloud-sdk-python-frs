@@ -11,5 +11,8 @@ setup(
     license = "Apache2.0",
     keywords = ('frs', 'sdk', 'huawei', 'cloud'),
     platforms = "Independent",
-    url = "https://support.huaweicloud.com/face/index.html"
+    url = "https://support.huaweicloud.com/face/index.html",
+    install_requires = [
+        'requests>2.0'
+    ]
 )
