@@ -34,6 +34,14 @@ frsclient/service/face_set_service.py
 frsclient/service/live_detect_service.py
 frsclient/service/search_service.py
 frsclient/service/service_query.py
+frsclient/service/v2/__init__.py
+frsclient/service/v2/api_collection_v2.py
+frsclient/service/v2/compare_service.py
+frsclient/service/v2/detect_service.py
+frsclient/service/v2/face_service.py
+frsclient/service/v2/face_set_service.py
+frsclient/service/v2/live_detect_service.py
+frsclient/service/v2/search_service.py
 frscommon/__init__.py
 frscommon/frs_constant.py
 frscommon/frs_exception.py

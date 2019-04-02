@@ -42,6 +42,7 @@ class FrsClient(object):
         _auth_info = auth_info or AuthInfo(ak, sk, end_point, region)
         self.service = FrsAccess(_auth_info, connection_timeout, connection_request_timeout, socket_time_out, proxies)
         self.project_id = project_id
+        self._apiCollectionV2 = ApiCollectionV2(self.service, self.project_id)
 
     def get_service_query(self):
         """Instantiates an object of 'ServiceQueryService' class.
@@ -91,3 +92,9 @@ class FrsClient(object):
         """
         face_service = FaceService(self.service, self.project_id)
         return face_service
+
+    def get_v2(self):
+        """
+        :rtype: ApiCollectionV2
+        """
+        return self._apiCollectionV2
