@@ -14,8 +14,8 @@ region = "Region"
 endpoint = "End point corresponding to region"
 
 if __name__ == '__main__':
-    auth_info = AuthInfo(ak=ak, sk=sk)
-    frs_client = FrsClient(auth_info=auth_info, project_id=project_id, end_point=endpoint, region=region)
+    auth_info = AuthInfo(ak=ak, sk=sk, end_point="https://face.apxxx.myhuaweicloud.com")
+    frs_client = FrsClient(auth_info=auth_info, project_id=project_id)
     # Compare face
     result = frs_client.get_v2().get_compare_service().compare_face_by_file(image1_path, image2_path)
     print(result.get_eval_result())

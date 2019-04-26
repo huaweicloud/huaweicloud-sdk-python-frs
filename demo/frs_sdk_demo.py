@@ -25,7 +25,7 @@ add_face_external_fields = {"timestamp":12, "id": "home"}
 ## (1)
 frs_client = FrsClient(ak=ak, sk=sk, project_id=project_id)
 ## (2)
-auth_info = AuthInfo(ak=ak, sk=sk)
+auth_info = AuthInfo(ak=ak, sk=sk, end_point="https://face.cn-north-1.myhuaweicloud.com")
 frs_client = FrsClient(auth_info=auth_info, project_id=project_id)
 
 # def service_query_example(frs_client):
