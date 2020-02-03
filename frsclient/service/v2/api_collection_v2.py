@@ -48,7 +48,7 @@ class ApiCollectionV2(object):
         """Instantiates an object of 'FaceSetService' class.
         :rtype: FaceSetServiceV2
         """
-        return self._faceset_service
+        return self._face_set_service
 
     def get_face_service(self):
         """Instantiates an object of 'FaceService' class.
