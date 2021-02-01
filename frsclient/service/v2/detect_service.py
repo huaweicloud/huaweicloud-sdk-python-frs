@@ -43,6 +43,15 @@ class DetectServiceV2(object):
         """
         return self._detect_face(image_base64, ImageType.BASE64, None)
 
+    def detect_face_by_base64(self, image_base64, attributes):
+        """
+        Detect face by base64
+        :rtype: DetectFaceResult
+        """
+        return self._detect_face(image_base64, ImageType.BASE64, attributes)
+
+
+
     def detect_face_by_obsurl(self, obsurl):
         """
         Detect face by obs url
@@ -56,3 +65,10 @@ class DetectServiceV2(object):
         :rtype: DetectFaceResult
         """
         return self._detect_face(file_path, ImageType.FILE, None)
+
+    def detect_face_by_file(self, file_path, attributes):
+        """
+        Detect face by file
+        :rtype: DetectFaceResult
+        """
+        return self._detect_face(file_path, ImageType.FILE, attributes)
